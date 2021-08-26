@@ -4,10 +4,33 @@ p
   | Find me in app/views/admins/dashboard/index.html.erb
 br
 br
-span
-  | Buyer's Accounts: 
-hr
+strong
+  u
+    | Buyer's Accounts: 
+
+
+table 
+  - @users.each do |user|
+    tr
+      td
+        = user.email
+
+
 br
-span
-  | Brokers's Accounts: 
-hr
+strong
+  u
+    | Brokers's Accounts: 
+
+table
+  - @brokers.each do |broker|
+    tr
+      td
+        = broker.email
+      td
+        - unless broker.approved
+          strong.mx-4.badge.btn-primary.rounded-pill
+            = link_to 'Pending...', admins_approved_path(broker), method: :patch, class: "text-white"
+        - else 
+          strong.mx-4.badge.bg-light.text-dark.rounded-pill
+            | Approved
+

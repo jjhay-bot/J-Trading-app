@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     authenticated :admin do
       namespace :admins do
         get 'dashboard/index', as: :authenticated_root
+        patch 'dashboard/:id/update',to:'dashboard#update' , as: :approved
       end
     end
   end

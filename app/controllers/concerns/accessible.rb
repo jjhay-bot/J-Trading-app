@@ -15,7 +15,7 @@ module Accessible
             redirect_to users_authenticated_root_path and return
         elsif broker_signed_in?
             flash.clear
-        redirect_to brokers_authenticated_root_path and return
+            redirect_to brokers_authenticated_root_path and return
         end
     end
 end
