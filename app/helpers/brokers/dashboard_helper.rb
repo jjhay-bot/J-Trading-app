@@ -1,0 +1,2 @@
+module Brokers::DashboardHelper
+end

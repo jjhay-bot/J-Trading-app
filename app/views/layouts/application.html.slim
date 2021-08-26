@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+      | JTradingApp
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .container
+      br
+      - if admin_signed_in?
+        = link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete
+      - elsif !user_signed_in? && !broker_signed_in?
+        = link_to "Admin", new_admin_session_path
+        |  | 
+      - if user_signed_in?
+        = link_to 'Sign Out as Buyer', destroy_user_session_path, method: :delete
+      - elsif !admin_signed_in? && !broker_signed_in?
+        = link_to "Buyer", new_user_session_path
+        |  | 
+      - if broker_signed_in?
+        = link_to 'Sign Out as Broker', destroy_broker_session_path, method: :delete
+      - elsif !admin_signed_in? && !user_signed_in?
+        = link_to "Broker", new_broker_session_path
+    = yield
