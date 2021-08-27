@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :items
+  resources :comments
   # get 'home/index'
 
   devise_for :users, path: 'users', controllers: {
