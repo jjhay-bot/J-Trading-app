@@ -15,6 +15,15 @@
  */
 
 
-a {
+a, a:hover {
     text-decoration: none;
+    background-color: transparent;
+}
+
+.fixed_top_end {
+    position: fixed;
+    z-index: -1;
+    top: 1rem;
+    right: 1rem;
+    opacity: 90%;
 }

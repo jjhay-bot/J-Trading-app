@@ -12,25 +12,28 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    p.notice
-      = notice
-    p.alert
-       = alert
+    .container.fixed_top_end.col-12
+    
+      .d-flex.flex-row-reverse
+        p.alert.badge.bg-success.text-dark.text-white
+          = notice
+        p.alert.badge.bg-warning.text-dark
+          = alert
 
-    .container.ms-4.my-4
-      - if admin_signed_in?
-        = link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete
-      - elsif !user_signed_in? && !broker_signed_in?
-        = link_to "Admin", new_admin_session_path
-        |  | 
-      - if user_signed_in?
-        = link_to 'Sign Out as Buyer', destroy_user_session_path, method: :delete
-      - elsif !admin_signed_in? && !broker_signed_in?
-        = link_to "Buyer", new_user_session_path
-        |  | 
-      - if broker_signed_in?
-        = link_to 'Sign Out as Broker', destroy_broker_session_path, method: :delete
-      - elsif !admin_signed_in? && !user_signed_in?
-        = link_to "Broker", new_broker_session_path
 
-      = yield
+    .d-flex.mb-4
+      .btn-group-sm role="group" aria-label="Basic outlined button group"
+        - if admin_signed_in?
+          = link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete, class: "btn btn-primary text-white"
+        - elsif !user_signed_in? && !broker_signed_in?
+          = link_to "Admin", new_admin_session_path, class: "btn btn-primary text-white mx-1"
+        - if user_signed_in?
+          = link_to 'Sign Out as Buyer', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white"
+        - elsif !admin_signed_in? && !broker_signed_in?
+          = link_to "Buyer", new_user_session_path, class: "btn btn-primary text-white mx-1"
+        - if broker_signed_in?
+          = link_to 'Sign Out as Broker', destroy_broker_session_path, method: :delete, class: "btn btn-primary text-white"
+        - elsif !admin_signed_in? && !user_signed_in?
+          = link_to "Broker", new_broker_session_path, class: "btn btn-primary text-white mx-1"
+
+    = yield

@@ -1,36 +1,76 @@
-h1
-  | Admins::Dashboard#index
-p
-  | Find me in app/views/admins/dashboard/index.html.erb
-br
-br
-strong
-  u
-    | Buyer's Accounts: 
+.d-flex.justify-content-end.mb-4
+  h6
+    strong.text-muted
+      | Admins::Dashboard
+
+.d-flex.justify-content-center
+  h4
+   strong 
+    | User List
+
+.card.my-4
+  .card-body
+    table.table
+      thead
+        tr
+          th.text-center scope="col"  
+            | Buyer's Accounts: 
+          th.text-center scope="col"  
+            | Wallet: 
+          th.text-center scope="col"  
+            | Stocks/Asset: 
+          th.text-center scope="col"  
+            | Status
+      - @users.each do |user|
+        tbody
+          tr
+            td.text-center.align-middle scope="row" 
+              = user.email
+            td.text-center.align-middle scope="row" 
+              span 
+                | $ 
+                = user.wallet
+            td.text-center.align-middle scope="row" 
+              = user.assets
+            td.text-center
+              strong.mx-4.badge.bg-success.text-white.rounded-pill
+                .mx-2.my-1
+                  | Approved
 
 
-table 
-  - @users.each do |user|
-    tr
-      td
-        = user.email
+.card.my-4
+  .card-body
+    table.table
+      thead
+        tr
+          th.text-center scope="col"  
+            | Brokers's Accounts: 
+          th.text-center scope="col"  
+            | Wallet: 
+          th.text-center scope="col"  
+            | Stocks/Asset: 
+          th.text-center scope="col"  
+            | Status:
+    
+      tbody
+        - @brokers.each do |broker|
+          tr
+            td.text-center.align-middle scope="row" 
+              = broker.email
+            td.text-center.align-middle scope="row" 
+              span 
+                | $ 
+                = broker.wallet
+            td.text-center.align-middle scope="row" 
+              = broker.assets
+            td.text-center
+              - unless broker.approved
+                strong.mx-4.badge.btn-warning.rounded-pill
+                  .mx-2.my-1
+                    = link_to 'Pending...', admins_approved_path(broker), method: :patch, class: "text-dark"
+              - else 
+                strong.mx-4.badge.bg-success.text-white.rounded-pill
+                  .mx-2.my-1
+                    | Approved
 
-
-br
-strong
-  u
-    | Brokers's Accounts: 
-
-table
-  - @brokers.each do |broker|
-    tr
-      td
-        = broker.email
-      td
-        - unless broker.approved
-          strong.mx-4.badge.btn-primary.rounded-pill
-            = link_to 'Pending...', admins_approved_path(broker), method: :patch, class: "text-white"
-        - else 
-          strong.mx-4.badge.bg-light.text-dark.rounded-pill
-            | Approved
 

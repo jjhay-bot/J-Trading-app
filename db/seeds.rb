@@ -10,9 +10,9 @@ User.destroy_all
 Broker.destroy_all
 Admin.destroy_all
 
-User.create(email: "user@gmail.com", password: "Admin123")
-User.create(email: "user_AAA@gmail.com", password: "Admin123")
-User.create(email: "user_BBBB@gmail.com", password: "Admin123")
+User.create(email: "buyer@gmail.com", password: "Admin123")
+User.create(email: "buyer_AAA@gmail.com", password: "Admin123")
+User.create(email: "buyer_BBBB@gmail.com", password: "Admin123")
 
 Broker.create(email: "broker@gmail.com", password: "Admin123")
 Broker.create(email: "broker_XXX@gmail.com", password: "Admin123")
