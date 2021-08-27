@@ -43,5 +43,7 @@ Rails.application.routes.draw do
     registrations: 'brokers/registrations'
   }
 
+  match '/send_mail', to: 'home#send_mail', via: 'get'
+
   root to: "home#index"
 end
