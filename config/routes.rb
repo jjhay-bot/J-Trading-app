@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :items
-  resources :comments
-  # get 'home/index'
 
   devise_for :users, path: 'users', controllers: {
     sessions: 'users/sessions',
@@ -42,8 +39,6 @@ Rails.application.routes.draw do
     sessions: 'brokers/sessions',
     registrations: 'brokers/registrations'
   }
-
-  match '/send_mail', to: 'home#send_mail', via: 'get'
 
   root to: "home#index"
 end
