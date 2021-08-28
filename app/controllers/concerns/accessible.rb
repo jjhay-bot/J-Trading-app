@@ -18,4 +18,5 @@ module Accessible
             redirect_to brokers_authenticated_root_path and return
         end
     end
+
 end

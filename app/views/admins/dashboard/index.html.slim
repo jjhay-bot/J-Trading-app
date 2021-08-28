@@ -14,36 +14,6 @@
       thead
         tr
           th.text-center scope="col"  
-            | Buyer's Accounts: 
-          th.text-center scope="col"  
-            | Wallet: 
-          th.text-center scope="col"  
-            | Stocks/Asset: 
-          th.text-center scope="col"  
-            | Status
-      - @users.each do |user|
-        tbody
-          tr
-            td.text-center.align-middle scope="row" 
-              = user.email
-            td.text-center.align-middle scope="row" 
-              span 
-                | $ 
-                = user.wallet
-            td.text-center.align-middle scope="row" 
-              = user.assets
-            td.text-center
-              strong.mx-4.badge.bg-success.text-white.rounded-pill
-                .mx-2.my-1
-                  | Approved
-
-
-.card.my-4
-  .card-body
-    table.table
-      thead
-        tr
-          th.text-center scope="col"  
             | Brokers's Accounts: 
           th.text-center scope="col"  
             | Wallet: 
@@ -72,5 +42,37 @@
                 strong.mx-4.badge.bg-success.text-white.rounded-pill
                   .mx-2.my-1
                     | Approved
+
+
+.card.my-4
+  .card-body
+    table.table
+      thead
+        tr
+          th.text-center scope="col"  
+            | Buyer's Accounts: 
+          th.text-center scope="col"  
+            | Wallet: 
+          th.text-center scope="col"  
+            | Stocks/Asset: 
+          th.text-center scope="col"  
+            | Status
+      - @users.each do |user|
+        tbody
+          tr
+            td.text-center.align-middle scope="row" 
+              = user.email
+            td.text-center.align-middle scope="row" 
+              span 
+                | $ 
+                = user.wallet
+            td.text-center.align-middle scope="row" 
+              = user.assets
+            td.text-center
+              strong.mx-4.badge.bg-success.text-white.rounded-pill
+                .mx-2.my-1
+                  | Approved
+
+
 
 
