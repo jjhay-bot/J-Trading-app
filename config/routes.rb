@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :stocks
+  
   devise_for :users, path: 'users', controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
