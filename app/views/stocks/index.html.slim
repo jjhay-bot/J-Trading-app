@@ -1,0 +1,45 @@
+h2 
+  = @stock_quote.company_name
+
+canvas#myChart[style="width:100%;max-width:600px"]
+script
+  | var xValues = [50,60,70,80,90,100,110,120,130,140,150]; 
+  | var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+  | new Chart("myChart", { type: "line", data: { labels: xValues, datasets: [{ fill: false, lineTension: 0, backgroundColor: "rgba(0,0,255,1.0)", borderColor: "blue", data: yValues }] }, options: { legend: {display: false}, scales: { yAxes: [{ticks: {min: 6, max:16}}], } } }); 
+
+/ implement to graph
+table.table
+  thead
+    tr
+      th[scope="col"]
+        | Chart
+  tbody  
+    tr 
+      = @stocks_chart.map do |chart|
+        - chart.close
+
+
+
+
+
+
+table.table
+  thead
+    tr
+      th[scope="col"]
+        | Latest price
+      th[scope="col"]
+        | 24hr Price change 
+      th[scope="col"]
+        | 24hr % Change
+  tbody
+    tr
+      td
+        = @stock_quote.latest_price
+      td
+        = @stock_quote.change
+      td
+        = @stock_quote.change_percent_s
+
+
+        
