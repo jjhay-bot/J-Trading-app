@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_151047) do
+ActiveRecord::Schema.define(version: 2021_09_02_162104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_151047) do
     t.string "encrypted_password", default: "", null: false
     t.integer "assets", default: 0, null: false
     t.integer "wallet", default: 0, null: false
+    
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -43,7 +44,18 @@ ActiveRecord::Schema.define(version: 2021_08_30_151047) do
     t.index ["reset_password_token"], name: "index_brokers_on_reset_password_token", unique: true
   end
 
+  create_table "brokers_stocks", id: false, force: :cascade do |t|
+    t.bigint "broker_id", null: false
+    t.bigint "stock_id", null: false
+    t.index ["broker_id", "stock_id"], name: "index_brokers_stocks_on_broker_id_and_stock_id"
+    t.index ["stock_id", "broker_id"], name: "index_brokers_stocks_on_stock_id_and_broker_id"
+  end
+
   create_table "stocks", force: :cascade do |t|
+    t.text "stock_name"
+    t.integer "asset"
+    t.integer "balance"
+    t.integer "broker_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

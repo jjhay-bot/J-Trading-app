@@ -1,6 +1,5 @@
 class Broker < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_and_belongs_to_many :stocks
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -11,4 +10,22 @@ class Broker < ApplicationRecord
   def inactive_message 
     approved? ? super : :not_approved
   end
+
+  def amzn?
+      self.stock_name == 'amzn'
+  end
+
+  def fb?
+      self.stock_name == 'fb'
+  end
+
+  def twtr?
+      self.stock_name == 'twtr'
+  end
+
+  def nflx?
+      self.stock_name == 'nflx'
+  end
+
+
 end

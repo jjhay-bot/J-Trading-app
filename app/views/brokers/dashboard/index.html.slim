@@ -11,50 +11,57 @@
       strong
         | Trading View
     
-.d-flex.justify-content-center
-  .row
-    br/
-    img[style="width: 600px;" src="https://previews.123rf.com/images/rimmart/rimmart1910/rimmart191000324/132973263-graph-stock-market-trade-candle-stick-graph-chart-of-stock-market-investment-trading-trade-finance-b.jpg" alt="tradingview"]
-  
-  .col-2.m-3.ms-2
-    .card.my-1
-      .card-header
-        | Assets
-      .card-body
-        p.card-text With supporting text below as a natural lead-in to additional content.
-        a.btn.btn-primary.text-white href="#"  Buy Stocks
-    .card.mt-2
-      .card-header
-        | Assets
-      .card-body
-        p.card-text With supporting text below as a natural lead-in to additional content.
-        a.btn.btn-primary.text-white href="#"  Sell Stocks
+.container
+	.d-flex
 
-br/
+		.col.col-lg-9 style='max-width: 700px;'
+			.container.mb-4
+			#list-nav-tabContent.tab-content
+			#list-home.tab-pane.fade aria-labelledby="list-amzm-list" role="tabpanel"
+				= render 'stocks/amzn'
+			/ #list-profile.tab-pane.fade aria-labelledby="list-profile-list" role="tabpanel"
+			/ 	= render 'stocks/fb'
+			/ #list-messages.tab-pane.fade aria-labelledby="list-messages-list" role="tabpanel" 
+			/ 	= render 'stocks/twtr'
+			/ #list-settings.tab-pane.fade.show.active aria-labelledby="list-settings-list" role="tabpanel" 
+			/ 	= render 'stocks/nflx'
 
-.d-flex.justify-content-center
-  .row.row-cols-1.row-cols-sm-2.g-3
-  .col.mx-1
-    .card
-      img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
-      .card-body
-        h5.card-title Card title
-        p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  .col.mx-1
-    .card
-      img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
-      .card-body
-        h5.card-title Card title
-        p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  .col.mx-1
-    .card
-      img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
-      .card-body
-        h5.card-title Card title
-        p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  .col.mx-1
-    .card
-      img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
-      .card-body
-        h5.card-title Card title
-        p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+		/ .col.col-lg-3.mb-4 style='width: 200px;'
+		/ 	br/
+		/ 	br/
+		/ 	#list-tab.list-group.position-absolute.top-7.start-0 role="tablist" 
+		/ 		a#list-home-list.list-group-item.list-group-item-action.active aria-controls="home" data-bs-toggle="list" href="#list-home" role="amzm"  AMZN
+		/ 		a#list-profile-list.list-group-item.list-group-item-action aria-controls="profile" data-bs-toggle="list" href="#list-profile" role="tab"  FB
+		/ 		a#list-messages-list.list-group-item.list-group-item-action aria-controls="messages" data-bs-toggle="list" href="#list-messages" role="tab" TWTR
+		/ 		a#list-settings-list.list-group-item.list-group-item-action aria-controls="settings" data-bs-toggle="list" href="#list-settings" role="tab"  NFLX
+
+
+
+
+
+/ .d-flex.justify-content-center
+/   .row.row-cols-1.row-cols-sm-2.g-3
+/   .col.mx-1
+/     .card
+/       img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
+/       .card-body
+/         h5.card-title Card title
+/         p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+/   .col.mx-1
+/     .card
+/       img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
+/       .card-body
+/         h5.card-title Card title
+/         p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+/   .col.mx-1
+/     .card
+/       img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
+/       .card-body
+/         h5.card-title Card title
+/         p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+/   .col.mx-1
+/     .card
+/       img.card-img-top alt="card-grid-image" src="https://i.redd.it/2kkkp9vgnyj21.jpg" style="width: 50px;"
+/       .card-body
+/         h5.card-title Card title
+/         p.card-text Lorem Ipsum is simply dummy text of the printing and typesetting industry.

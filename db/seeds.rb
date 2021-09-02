@@ -14,7 +14,7 @@ User.create(email: "buyer@gmail.com", password: "Admin123")
 User.create(email: "buyer_AAA@gmail.com", password: "Admin123")
 User.create(email: "buyer_BBBB@gmail.com", password: "Admin123")
 
-Broker.create(email: "broker@gmail.com", password: "Admin123")
+Broker.create(email: "broker@gmail.com", password: "Admin123", approved: "true")
 Broker.create(email: "broker_XXX@gmail.com", password: "Admin123")
 Broker.create(email: "broker_YYY@gmail.com", password: "Admin123")
 

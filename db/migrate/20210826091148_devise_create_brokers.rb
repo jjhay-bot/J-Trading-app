@@ -8,6 +8,7 @@ class DeviseCreateBrokers < ActiveRecord::Migration[6.1]
       t.string :encrypted_password, null: false, default: ""
       t.integer :assets,            null: false, default: '0'
       t.integer :wallet,            null: false, default: '0'
+      t.integer :transaction,       null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token

@@ -62,3 +62,9 @@ gem "devise"
 gem "slim", "~> 4.1"
 
 gem 'iex-ruby-client'
+
+gem 'chartkick'
+
+gem 'groupdate'
+
+gem 'fusioncharts-rails'
