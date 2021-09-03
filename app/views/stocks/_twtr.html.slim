@@ -1,4 +1,4 @@
-.container.position-absolute
+.container
     .card.p-4 style='background:#00a5e7; border-radius: 15px;'
         .row
             .col-8
@@ -23,3 +23,24 @@
 
         .container.p-3.mt-3 style="background-color: white; border-radius: 15px;"
             = line_chart @chart
+
+
+.container.py-2
+    .card.p-4 style='background: #00a5e7; border-radius: 15px;'
+        .row
+            .col-8
+                .d-flex.justify-content-between
+                    h2.fw-bold.align-middle.text-white
+                        / = image_tag @logo, style: 'width: 40px; margin-right: 0.75rem; position: relative; top: -0.25rem; outline: auto; padding: 0.25rem;'
+                        = @name	
+            .col-4
+                .container.text-white style='width: 225px;'
+                    .row 
+                        span style='width: 120px;'
+                            | Wallet 
+                        |$ 
+                        =  + current_broker.wallet
+                    .row 
+                        span style='width: 120px;'
+                            | Asset
+                        = current_broker.assets

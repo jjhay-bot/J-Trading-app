@@ -2,4 +2,14 @@
     
 .container
     = render 'stocks/amzn'
-				
+    
+= render "brokers/broker"
+
+.d-flex.justify-content-center
+    .btn.btn-primary.px-4.m-3
+        = link_to 'Buy', brokers_authenticated_root_path, style: "color:white", notice: "successfully buy stocks."
+    .btn.btn-secondary.px-4.m-3.disabled
+        | Sell
+        
+
+

@@ -3,8 +3,7 @@ class CreateStocks < ActiveRecord::Migration[6.1]
     create_table :stocks do |t|
       t.text :stock_name
       t.integer :asset    # stocks
-      t.integer :balance  # currency
-      t.integer :broker_id
+      t.integer :price    # currency
       
       t.timestamps
     end

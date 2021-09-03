@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'chart/chartview'
   resources :stocks
   
   devise_for :admins, path: 'admins', controllers: {
@@ -36,6 +35,9 @@ Rails.application.routes.draw do
         get 'dashboard/fb'
         get 'dashboard/twtr'
         get 'dashboard/nflx'
+        # get 'dashboard/buy',to:'dashboard#buy'
+        # patch 'dashboard/buy',to:'dashboard#buy'
+        # patch 'dashboard/amzn/:id',to:'dashboard#buy', as: :buy
       end
     end
   end

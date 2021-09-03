@@ -9,14 +9,36 @@
 User.destroy_all
 Broker.destroy_all
 Admin.destroy_all
+Stock.destroy_all
 
-User.create(email: "buyer@gmail.com", password: "Admin123")
-User.create(email: "buyer_AAA@gmail.com", password: "Admin123")
-User.create(email: "buyer_BBBB@gmail.com", password: "Admin123")
+c1 = User.create(email: "buyer@gmail.com", password: "Admin123")
+c2 = User.create(email: "buyer_AAA@gmail.com", password: "Admin123")
+c3 = User.create(email: "buyer_BBBB@gmail.com", password: "Admin123")
 
-Broker.create(email: "broker@gmail.com", password: "Admin123", approved: "true")
-Broker.create(email: "broker_XXX@gmail.com", password: "Admin123")
-Broker.create(email: "broker_YYY@gmail.com", password: "Admin123")
+c1.stocks.create(stock_name: "amzn", asset: "0")
+c1.stocks.create(stock_name: "fb", asset: "0")
+c1.stocks.create(stock_name: "twtr", asset: "0")
+c1.stocks.create(stock_name: "nflx", asset: "0")
+
+c2.stocks.create(stock_name: "amzn", asset: "0")
+c2.stocks.create(stock_name: "fb", asset: "0")
+c2.stocks.create(stock_name: "twtr", asset: "0")
+c2.stocks.create(stock_name: "nflx", asset: "0")
+
+c3.stocks.create(stock_name: "amzn", asset: "0")
+c3.stocks.create(stock_name: "fb", asset: "0")
+c3.stocks.create(stock_name: "twtr", asset: "0")
+c3.stocks.create(stock_name: "nflx", asset: "0")
+
+
+b1 = Broker.create(email: "broker@gmail.com", password: "Admin123", approved: "true")
+b2 = Broker.create(email: "broker_XXX@gmail.com", password: "Admin123")
+b3 = Broker.create(email: "broker_YYY@gmail.com", password: "Admin123")
 
 Admin.create(email: "admin@gmail.com", password: "Admin123")
 Admin.create(email: "admin2@gmail.com", password: "Admin123")
+
+b1.stocks.create(stock_name: "amzn", asset: "0")
+b1.stocks.create(stock_name: "fb", asset: "0")
+b1.stocks.create(stock_name: "twtr", asset: "0")
+b1.stocks.create(stock_name: "nflx", asset: "0")

@@ -2,7 +2,6 @@ class Admins::DashboardController < ApplicationController
   def index
     @users = User.all
     @brokers = Broker.all.order(approved: :desc)    #sort by status
-
   end
 
   def update

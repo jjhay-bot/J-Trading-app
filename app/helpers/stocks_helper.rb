@@ -12,4 +12,11 @@ module StocksHelper
         @chance_percent = client.quote(symbol).change_percent_s 
     end
 
+    def buy(symbol)
+        Broker.where("id = #{current_broker.id}").update(
+            :wallet=> current_broker.wallet + 10 ,
+            :assets=> current_broker.assets - 10*client.quote(symbol).latest_price.to_f
+        )        
+    end
+
 end
