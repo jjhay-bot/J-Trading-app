@@ -1,14 +1,16 @@
 = render 'layouts/ticker'
     
 .container
-    = render 'stocks/twtr'
-				
+    = render 'stocks/amzn'
+    
 = render "brokers/broker"
 
 .d-flex.justify-content-center
-    = form_for brokers_buytwtr_path, as: :buy do |f|
+    = form_for users_buy_path, as: :buy do |f|
         - f.submit 'Buy', class: "btn btn-primary px-4 m-3"
     .btn.btn-secondary.px-4.m-3.disabled
         | Sell
         
+
+
 

@@ -25,7 +25,16 @@
 
 .col.col-lg-3.mb-4 style='width: 200px;'
   .btn-group-vertical.position-absolute.top-8.start-0 aria-label=("Vertical button group") role="group" 
-    = link_to "AMZN", brokers_authenticated_root_path, class: "btn badge btn-info text-white p-2"
-    = link_to "FB", brokers_dashboard_fb_path, class: "btn badge btn-info text-white p-2"
-    = link_to "TWTR", brokers_dashboard_twtr_path, class:"btn badge btn-info text-white p-2"
-    = link_to "NFLX", brokers_dashboard_nflx_path, class: "btn badge btn-info text-white p-2"
+
+
+
+    - unless user_signed_in?
+      = link_to "AMZN", brokers_authenticated_root_path, class: "btn badge btn-info text-white p-2"
+      = link_to "FB", brokers_dashboard_fb_path, class: "btn badge btn-info text-white p-2"
+      = link_to "TWTR", brokers_dashboard_twtr_path, class:"btn badge btn-info text-white p-2"
+      = link_to "NFLX", brokers_dashboard_nflx_path, class: "btn badge btn-info text-white p-2"
+    - else
+      = link_to "AMZN", users_authenticated_root_path, class: "btn badge btn-info text-white p-2"
+      = link_to "FB", users_dashboard_fb_path, class: "btn badge btn-info text-white p-2"
+      = link_to "TWTR", users_dashboard_twtr_path, class:"btn badge btn-info text-white p-2"
+      = link_to "NFLX", users_dashboard_nflx_path, class: "btn badge btn-info text-white p-2"

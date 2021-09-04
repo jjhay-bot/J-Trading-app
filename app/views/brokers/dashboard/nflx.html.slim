@@ -3,3 +3,11 @@
 .container
     = render 'stocks/nflx'
 				
+= render "brokers/broker"
+
+.d-flex.justify-content-center
+    = form_for brokers_buynflx_path, as: :buy do |f|
+        - f.submit 'Buy', class: "btn btn-primary px-4 m-3"
+    .btn.btn-secondary.px-4.m-3.disabled
+        | Sell
+        

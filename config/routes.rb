@@ -23,7 +23,14 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       namespace :users do
-        get 'dashboard/index', as: :authenticated_root
+        get 'dashboard/amzn', as: :authenticated_root
+        get 'dashboard/fb'
+        get 'dashboard/twtr'
+        get 'dashboard/nflx'
+        post 'dashboard/amzn',to:'dashboard#buy_amzn', as: :buy
+        post 'dashboard/fb',to:'dashboard#buy_fb', as: :buyfb
+        post 'dashboard/twtr',to:'dashboard#buy_twtr', as: :buytwtr
+        post 'dashboard/nflx',to:'dashboard#buy_nflx', as: :buynflx
       end
     end
   end
@@ -35,9 +42,10 @@ Rails.application.routes.draw do
         get 'dashboard/fb'
         get 'dashboard/twtr'
         get 'dashboard/nflx'
-        # get 'dashboard/buy',to:'dashboard#buy'
-        # patch 'dashboard/buy',to:'dashboard#buy'
-        # patch 'dashboard/amzn/:id',to:'dashboard#buy', as: :buy
+        post 'dashboard/amzn',to:'dashboard#buy_amzn', as: :buy           #this should be sell
+        post 'dashboard/fb',to:'dashboard#buy_fb', as: :buyfb             #this should be sell
+        post 'dashboard/twtr',to:'dashboard#buy_twtr', as: :buytwtr       #this should be sell
+        post 'dashboard/nflx',to:'dashboard#buy_nflx', as: :buynflx       #this should be sell
       end
     end
   end

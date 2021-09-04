@@ -33,9 +33,9 @@ class Brokers::DashboardController < ApplicationController
     @symbol = "amzn"          # stock name
     @broker = Broker.find(current_broker.id)
     @stock_target = @broker.stocks.find_by_stock_name(@symbol)
-    @wallet_new = @broker.update(wallet: @broker.wallet + 10)
+    @wallet_new = @broker.update(wallet: @broker.wallet - 10)
     @last_price = Stock.sandbox.quote(@symbol).latest_price
-    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset - 100/@last_price.to_d)
+    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset + 10/@last_price.to_f)
     redirect_to brokers_buy_path
   end
 
@@ -43,9 +43,9 @@ class Brokers::DashboardController < ApplicationController
     @symbol = "fb"          # stock name
     @broker = Broker.find(current_broker.id)
     @stock_target = @broker.stocks.find_by_stock_name(@symbol)
-    @wallet_new = @broker.update(wallet:@broker.wallet + 10)
+    @wallet_new = @broker.update(wallet:@broker.wallet - 10)
     @last_price = Stock.sandbox.quote(@symbol).latest_price
-    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset + 100/@last_price.to_f)
+    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset + 10/@last_price.to_f)
     redirect_to brokers_buyfb_path
   end
 
@@ -53,9 +53,9 @@ class Brokers::DashboardController < ApplicationController
     @symbol = "nflx"          # stock name
     @broker = Broker.find(current_broker.id)
     @stock_target = @broker.stocks.find_by_stock_name(@symbol)
-    @wallet_new = @broker.update(wallet:@broker.wallet + 10)
+    @wallet_new = @broker.update(wallet:@broker.wallet - 10)
     @last_price = Stock.sandbox.quote(@symbol).latest_price
-    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset - 100/@last_price.to_f)
+    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset + 10/@last_price.to_f)
     redirect_to brokers_buynflx_path
   end
 
@@ -63,9 +63,9 @@ class Brokers::DashboardController < ApplicationController
     @symbol = "twtr"          # stock name
     @broker = Broker.find(current_broker.id)
     @stock_target = @broker.stocks.find_by_stock_name(@symbol)
-    @wallet_new = @broker.update(wallet:@broker.wallet + 10)
+    @wallet_new = @broker.update(wallet:@broker.wallet - 10)
     @last_price = Stock.sandbox.quote(@symbol).latest_price
-    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset - 100/@last_price.to_f)
+    @stock_new = @broker.stocks.find_by_stock_name(@symbol).update(asset: @stock_target.asset + 10/@last_price.to_f)
     redirect_to brokers_buytwtr_path
   end
 

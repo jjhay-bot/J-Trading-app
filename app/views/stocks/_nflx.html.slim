@@ -35,13 +35,19 @@
                         / = image_tag @logo, style: 'width: 40px; margin-right: 0.75rem; position: relative; top: -0.25rem; outline: auto; padding: 0.25rem;'
                         = @name	
             .col-4
-                .container.text-white style='width: 225px;'
+                .container.text-white style='width: 250px;'
                     .row 
-                        span style='width: 120px;'
-                            | Wallet 
-                        |$ 
-                        =  + current_broker.wallet
+                        span style='width: 80px;'
+                            | Wallet:
+                        - unless user_signed_in?
+                            | $ 
+                            = current_broker.wallet
+                        - else
+                            | $ 
+                            = current_user.wallet
+                                                   
                     .row 
-                        span style='width: 120px;'
-                            | Asset
-                        = current_broker.assets
+                        span style='width: 80px;'
+                            | Asset:
+                        = @stock
+                        |  NTFLX
