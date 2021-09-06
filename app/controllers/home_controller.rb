@@ -14,11 +14,4 @@ class HomeController < ApplicationController
     @symbol = "nflx"         # stock name
     @news_nflx = client.news(@symbol).last
   end
-  
-  # def index
-  #   ["amzn", "fb", "twtr", "nflx"].each do |n|
-  #     client.news(n).last
-  #   end
-  # end
-
 end

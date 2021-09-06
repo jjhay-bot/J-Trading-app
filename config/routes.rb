@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
   }
+  
   devise_scope :admin do
     authenticated :admin do
       namespace :admins do
