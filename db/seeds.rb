@@ -42,3 +42,8 @@ b1.stocks.create(stock_name: "amzn", asset: "100")
 b1.stocks.create(stock_name: "fb", asset: "100")
 b1.stocks.create(stock_name: "twtr", asset: "100")
 b1.stocks.create(stock_name: "nflx", asset: "100")
+
+a1.stocks.create(stock_name: "amzn", asset: "0")
+a1.stocks.create(stock_name: "fb", asset: "0")
+a1.stocks.create(stock_name: "twtr", asset: "0")
+a1.stocks.create(stock_name: "nflx", asset: "0")

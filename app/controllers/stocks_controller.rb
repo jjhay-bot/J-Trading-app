@@ -1,12 +1,24 @@
 class StocksController < ApplicationController 
+  include StocksHelper
+
   def index
-    # require 'iex-ruby-client'
-    client = IEX::Api::Client.new(
-      publishable_token: 'pk_1e6046c067f94660afa2f03aa72d47f1',
-      endpoint: 'https://cloud.iexapis.com/v1'
-    )
-    @stock = client.quote('msft').latest_price
+    @symbol = "amzn"         # stock name
+    get_data(@symbol)        # helper  app/helpers/stocks_helper.rb
+    @wallet = Broker.find(current_broker.id).wallet.to_f
+    @stock = Broker.find(current_broker.id).stocks.find_by_stock_name(@symbol).asset.to_f
   end
+
+
+  private
+  
+  def stock_params
+    params.require(:stocks).permit(:assets, :balance, :transaction)
+  end
+
+  def get_stock
+    @stock =  @broker.stocks.find_by_id(@broker.id, current_broker.id) 
+  end
+
 end
 
 
