@@ -47,3 +47,12 @@ a, a:hover {
     from {opacity :1;}
     to {opacity :0;}
 }
+
+.xxx {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 200px;
+    background-color: aliceblue;
+}
