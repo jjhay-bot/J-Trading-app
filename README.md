@@ -1,3 +1,3 @@
 # README
 
-Project preview https://cryptic-falls-03956.herokuapp.com/
+Project preview https://j-trading.herokuapp.com/
