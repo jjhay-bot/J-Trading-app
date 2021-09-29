@@ -35,15 +35,15 @@ b1 = Broker.create(email: "broker@gmail.com", password: "Admin123", approved: "t
 b2 = Broker.create(email: "broker_XXX@gmail.com", password: "Admin123")
 b3 = Broker.create(email: "broker_YYY@gmail.com", password: "Admin123")
 
-Admin.create(email: "admin@gmail.com", password: "Admin123")
-Admin.create(email: "admin2@gmail.com", password: "Admin123")
+a1 = Admin.create(email: "admin@gmail.com", password: "Admin123")
+
 
 b1.stocks.create(stock_name: "amzn", asset: "100")
 b1.stocks.create(stock_name: "fb", asset: "100")
 b1.stocks.create(stock_name: "twtr", asset: "100")
 b1.stocks.create(stock_name: "nflx", asset: "100")
 
-a1.stocks.create(stock_name: "amzn", asset: "0")
-a1.stocks.create(stock_name: "fb", asset: "0")
-a1.stocks.create(stock_name: "twtr", asset: "0")
-a1.stocks.create(stock_name: "nflx", asset: "0")
+# a1.stocks.create(stock_name: "amzn", asset: "0")
+# a1.stocks.create(stock_name: "fb", asset: "0")
+# a1.stocks.create(stock_name: "twtr", asset: "0")
+# a1.stocks.create(stock_name: "nflx", asset: "0")
