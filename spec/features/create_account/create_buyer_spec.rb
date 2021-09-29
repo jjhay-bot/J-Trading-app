@@ -1,5 +1,19 @@
 require 'rails_helper'
 
+RSpec.describe "User sign up page", type: :system do
+
+  before do
+    driven_by(:rack_test)
+  end
+
+  it 'expect to visit user sign up page' do
+    visit  "/users/sign_up"
+    expect(page).to have_current_path(new_user_registration_path)
+  end
+
+end
+
+
 RSpec.describe User do
   before :all do 
     @user = User.new(
