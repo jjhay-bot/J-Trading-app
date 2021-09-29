@@ -31,7 +31,7 @@ html
 
     .d-flex.mb-4
       .btn-group-sm role="group" aria-label="Basic outlined button group"
-        = link_to 'Home', root_path, class: "btn btn-primary text-white mx-1"
+        = link_to 'News', root_path, class: "btn btn-primary text-white mx-1"
         - if admin_signed_in?
           = link_to 'Sign Out as Admin', destroy_admin_session_path, method: :delete, class: "btn btn-primary text-white"
         - elsif !user_signed_in? && !broker_signed_in?
