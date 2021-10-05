@@ -1,55 +1,52 @@
 .card.p-3.mb-4
   .d-flex
-    .col
+    .xxx
+      img src= @news_amzn.image alt=""  style= 'width: 200px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
+      .d-flex.justify-content-between.mx-2.my-1
+          = link_to "Source",  @news_amzn.url, class: "btn badge bg-info text-white mx-1"
+          = @news_amzn.datetime.to_date
+    .col.ps-3
       h3.text-primary
         = @news_amzn.headline
       span 
         = @news_amzn.summary
-    .xxx
-      img src="@news_amzn.image" alt="img_link"  style= 'width: 300px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
-      .d-flex.justify-content-between.mx-2.my-1
-          = link_to "Source",  @news_amzn.url, class: "btn badge bg-info text-white mx-1"
-          = @news_amzn.datetime.to_date
 
 .card.p-3.mb-4
   .d-flex
-    .col
+    .xxx
+      img src=@news_fb.image alt="img_link"  style= 'width: 200px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
+      .d-flex.justify-content-between.mx-2.my-1
+          = link_to "Source",  @news_fb.url, class: "btn badge bg-info text-white mx-1"
+          = @news_fb.datetime.to_date
+    .col.ps-3
       h3.text-primary
         = @news_fb.headline
       span 
         = @news_fb.summary
-    .xxx
-      img src="@news_fb.image" alt="img_link"  style= 'width: 300px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
-      .d-flex.justify-content-between.mx-2.my-1
-          = link_to "Source",  @news_fb.url, class: "btn badge bg-info text-white mx-1"
-          = @news_fb.datetime.to_date
-
 
 .card.p-3.mb-4
   .d-flex
-    .col
+    .xxx
+      img src=@news_twtr.image alt="img_link"  style= 'width: 200px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
+      .d-flex.justify-content-between.mx-2.my-1
+          = link_to "Source",  @news_twtr.url, class: "btn badge bg-info text-white mx-1"
+          = @news_twtr.datetime.to_date
+    .col.ps-3
       h3.text-primary
         = @news_twtr.headline
       span 
         = @news_twtr.summary
-    .xxx
-      img src="@news_twtr.image" alt="img_link"  style= 'width: 300px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
-      .d-flex.justify-content-between.mx-2.my-1
-          = link_to "Source",  @news_twtr.url, class: "btn badge bg-info text-white mx-1"
-          = @news_twtr.datetime.to_date
-
-
-
 
 .card.p-3.mb-4
   .d-flex
-    .col
+    .xxx
+      img src=@news_nflx.image alt="img_link"  style= 'width: 200px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
+      .d-flex.justify-content-between.mx-2.my-1
+          = link_to "Source",  @news_nflx.url, class: "btn badge bg-info text-white mx-1"
+          = @news_nflx.datetime.to_date
+    .col.ps-3
       h3.text-primary
         = @news_nflx.headline
       span 
         = @news_nflx.summary
-    .xxx
-      img src="@news_nflx.image" alt="img_link"  style= 'width: 300px; margin-right: 0.75rem; position: relative; border-radius: 0.75rem; height: 100%'
-      .d-flex.justify-content-between.mx-2.my-1
-          = link_to "Source",  @news_nflx.url, class: "btn badge bg-info text-white mx-1"
-          = @news_nflx.datetime.to_date
+

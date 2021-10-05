@@ -3,15 +3,16 @@ class HomeController < ApplicationController
 
   def index
     @symbol = "amzn"         # stock name
-    @news_amzn = client.news(@symbol).last
-
+    @news_amzn = client_cloud.news(@symbol).last
     @symbol = "fb"         # stock name
-    @news_fb = client.news(@symbol).last
+    @news_fb = client_cloud.news(@symbol).last
 
     @symbol = "twtr"         # stock name
-    @news_twtr = client.news(@symbol).last
+    @news_twtr = client_cloud.news(@symbol).last
 
     @symbol = "nflx"         # stock name
-    @news_nflx = client.news(@symbol).last
+    @news_nflx = client_cloud.news(@symbol).last
   end
 end
+
+

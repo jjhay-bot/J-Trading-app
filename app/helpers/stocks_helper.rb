@@ -3,6 +3,11 @@ module StocksHelper
         Stock.sandbox           # get sandbox to model
     end
 
+    def client_cloud
+        Stock.cloud           # get sandbox to model
+    end
+
+
     def get_data(symbol)
         @logo = "https://storage.googleapis.com/iex/api/logos/#{symbol.upcase}.png"
 
@@ -15,14 +20,5 @@ module StocksHelper
         @chance = @quote.change 
         @chance_percent = @quote.change_percent_s 
     end
-
-    # def buy(symbol)
-
-    #     Broker.where("id = #{current_broker.id}").update(
-    #         :wallet=> current_broker.wallet + 10,
-    #     )
-
-
-    # end
 
 end
