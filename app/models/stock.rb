@@ -16,7 +16,7 @@ class Stock < ApplicationRecord
 
   def self.cloud
     IEX::Api::Client.new(
-      publishable_token: "pk_6846c91abbed402885787624d1e88164",
+      publishable_token: "pk_4ba4a7b840694b8abfb573f4808cb258",
       endpoint: 'https://cloud.iexapis.com/v1'      
     )
   end
