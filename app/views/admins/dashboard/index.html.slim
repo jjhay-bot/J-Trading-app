@@ -33,7 +33,7 @@
                 | $ 
                 = broker.wallet
             td.text-center.align-middle scope="row" 
-              = broker.assets
+              = broker.stocks.select {|x| !x.asset.zero? }.map{|x|  "#{x.stock_name.upcase}:#{x.asset}" }.join(', ')
             td.text-center
               - unless broker.approved
                 strong.mx-4.badge.btn-warning.rounded-pill
@@ -59,6 +59,7 @@
           th.text-center scope="col"  
             | Status
       - @users.each do |user|
+        byebug 
         tbody
           tr
             td.text-center.align-middle scope="row" 
@@ -68,7 +69,7 @@
                 | $ 
                 = user.wallet
             td.text-center.align-middle scope="row" 
-              = user.assets
+              =  user.stocks.select {|x| !x.asset.zero? }.map{|x|  "#{x.stock_name.upcase}:#{x.asset}" }.join(', ')
             td.text-center
               strong.mx-4.badge.bg-success.text-white.rounded-pill
                 .mx-2.my-1
