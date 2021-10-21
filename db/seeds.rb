@@ -15,7 +15,7 @@ c1 = User.create(email: "buyer@gmail.com", password: "Admin123")
 c2 = User.create(email: "buyer_AAA@gmail.com", password: "Admin123")
 c3 = User.create(email: "buyer_BBBB@gmail.com", password: "Admin123")
 
-c1.stocks.create(stock_name: "amzn", asset: "0")
+c1.stocks.create(stock_name: "amzn", asset: "1")
 c1.stocks.create(stock_name: "fb", asset: "10")
 c1.stocks.create(stock_name: "twtr", asset: "3")
 c1.stocks.create(stock_name: "nflx", asset: "5")
